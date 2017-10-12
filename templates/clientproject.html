@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Client Projects</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/clientproject.css')}}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	 <div class="w3-top">
+        <div class="w3-bar" id="myNavbar">
+            <a href="http://127.0.0.1:5000/FirmIn" class="w3-bar-item w3-button">FIRMIN</a>
+            <a href="http://127.0.0.1:5000/FirmIn/admin" class="w3-bar-item w3-button">ADMIN</a>
+            <div class="navbartabs">
+                    <a href="http://127.0.0.1:5000/FirmIn/login/" class="w3-bar-item w3-button w3-hide-small" style="float: right;"><i class="fa fa-user"></i>LOGOUT</a>
+             </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 80px">
+        <div class="col-md-10 col-sm-10 col-md-offset-1 col-xs-12 gutter">
+            <div class="sales">
+                <h2>Client projects</h2>
+                {% for id,desc,name in projectzip: %}
+                <div class="projlist">
+                	<div class="list">
+                		<h5>Project Description : {{desc}}</h5>
+                        <h5>Client Name : {{name}}</h5>
+                		<a href="/FirmIn/admin/clientproject/disapprove/{{key}}/"><button>Disapprove</button></a>
+                		<a href="/FirmIn/admin/clientproject/approve/{{key}}/"><button>Approve</button></a>
+                	</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 40px">
+        <div class="col-md-10 col-sm-10 col-md-offset-1 col-xs-12 gutter">
+            <div class="sales">
+                <table>
+                <thead>
+                    <tr>
+                        <th style="padding: 10px">Teamleader</th>
+                        <th style="padding: 10px">Team</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for key, value in freedict.iteritems(): %}
+                <tr>
+                    <td style="padding: 10px">{{key}}</td>
+                    <td style="padding: 10px">{{value}}</td>
+                    <td style="padding: 10px"><form action="/FirmIn/admin/newteamlead/{{key}}/" method="post">
+                        <select name="project_id" style="max-width:50%">
+                            {% for key,value in approveddict.iteritems(): %}
+                                <option value={{key}}>{{value}}</option>
+                            {% endfor %}
+                        </select>
+                        <input type="submit" name="submit" value="Done">
+                    </form></td>
+                </tr>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

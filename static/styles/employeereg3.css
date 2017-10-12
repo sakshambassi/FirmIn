@@ -1,0 +1,93 @@
+html{
+    background-color: #bbb;
+	background-size: cover;
+    min-height: 100%;
+}
+.w3-top{
+    background-color: black;
+}
+.w3-top a{
+     color: white;
+}
+body{
+    background:none;
+    margin-top: -50px;
+}
+
+#employee-registration-form{
+    background-color: #fff;
+    max-width: 800px;
+    margin: 90px auto 0;
+    padding: 40px;
+    color: #858b8e;
+    box-shadow: 6px 6px 6px rgba(0,0,0,0.2);
+}
+
+#employee-registration-form h2{
+    padding-bottom: 20px;
+    margin: 10px 20px;
+    font-size: 24px;
+}
+
+#employee-registration-form hr{
+    margin-top: 38px;
+    margin-bottom: 54px;
+    margin-left:3px;
+    border: 1px solid #cccccc;
+
+}
+
+#employee-registration-form .form-group{
+	margin-bottom: 20px;
+    margin-left:20px;
+	width: 30%;
+    float:left;
+    text-align: left;
+}
+
+#employee-registration-form .form-control{
+    padding: 12px 20px;
+    height: auto;
+    border-radius: 2px;
+}
+
+#employee-registration-form .radio-inline{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#employee-registration-form .gender{
+    width: 30%;
+    margin-top: 30px;
+    padding-left: 20px
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#employee-registration-form .btn{
+    width: 46%;
+    margin: 20px auto 0;
+    display: block;
+    outline: none;
+}
+
+@media screen and (max-width: 800px){
+    #employee-registration-form .form-group{
+        width: 45%;
+    }
+
+    #employee-registration-form{
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 560px){
+    #employee-registration-form .form-group{
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #employee-registration-form h2{
+        text-align: center;
+    }
+}

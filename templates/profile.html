@@ -1,0 +1,113 @@
+
+<html>
+	<head>
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/profile.css') }}">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+
+<body style="background-color:#f2f2f2">
+<div class="w3-top"> 
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="http://127.0.0.1:5000/FirmIn/" class="w3-bar-item w3-button">FIRMIN</a>
+    <div class="navbartabs">
+    
+    <a href="" class="w3-bar-item w3-button w3-hide-small" style="float: right;"><i class="fa fa-user"></i>Log out</a>
+    </div>
+  </div>
+</div>
+<!-- end of nav-->
+<div class="container" style="">
+	<div class="row" >
+		<div class="col-sm-8 col-md-8 col-md-offset-2" style="height:100%;width:66%;background-color:white">
+            <div class="user-image" style="align:center">
+                <img src="http://www.tripleccom.com/wp-content/uploads/male-profile-blank.png" title="User" class="img-circle" style="align:center;width:200px;height:200px;margin-top:60px">
+            </div>
+            <div class="user-info-block" style="color:black;align:center">
+                <div class="user-heading">
+                    <h3>{{name}}</h3>
+                    <span class="help-block">{{address}}</span>
+                </div>
+                <ul class="navigation" class="col-md-12">
+                    <li class="active">
+						
+                        <a data-toggle="tab" href="#information" class="col-md-12">
+							<div style="text-align:center">
+                            <span class="glyphicon glyphicon-user"></span>
+							</div>
+                        </a>
+                    </li>
+                    <li>
+						
+                        <a data-toggle="tab" href="#settings" class="col-md-12">
+							<div style="text-align:center">
+                            <span class="glyphicon glyphicon-briefcase"></span>
+							</div>
+                        </a>
+						
+                    </li>
+                    <li>
+			
+                        <a data-toggle="tab" href="#email" class="col-md-12">
+							<div style="text-align:center">
+                           		 <span class="glyphicon glyphicon-credit-card"></span>
+							</div>
+						</a>
+						
+                    </li>
+                    <li>
+						
+                        <a data-toggle="tab" href="#events" class="col-md-12">
+							<div style="text-align:center">
+                            <span class="glyphicon glyphicon-stats"></span>
+							</div>
+                        </a>
+						
+                    </li>
+                </ul>
+                <div class="user-body">
+                    <div class="tab-content">
+                        <div id="information" class="tab-pane active">
+                            <h4>Welcome User</h4>
+			                 <hr>
+                            
+                                <ul>Email-id : {{email_id}} </ul>
+                                <ul>Phone no : {{phone}}</ul>
+                                <ul>Address : {{address}}</ul>
+
+                            
+                        </div>
+                        <div id="settings" class="tab-pane">
+                            <h4>Workplace info</h4>
+
+                                <ul>Designation : {{designation}} </ul>
+                                <ul>Department : {{department}}</ul>
+                                <ul>Grade : {{grade}}</ul>
+
+                        </div>
+                        <div id="email" class="tab-pane">
+                            <h4>Salary and finance</h4>
+                                <ul>Base Salary : {{base_salary}} </ul>
+                                <ul>Dearness Allowance(DA) : {{da}}</ul>
+                                <ul>House Rent Allowance : {{hra}}</ul>
+                                <ul>Professional Tax : {{tax}}</ul>
+                                <ul>Providend Fund : {{providend_fund}}</ul>
+                                <ul>Total Salary : {{total_salary}}</ul>
+                        </div>
+                        <div id="events" class="tab-pane">
+                            <h4>Your Progress and status</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/employeereg3.css') }}">
+    <title>Employee Registration Form</title>
+</head>
+
+<body>
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="" class="w3-bar-item w3-button">FIRMIN</a>
+    <div class="navbartabs">
+    <a href="http://127.0.0.1:5000/FirmIn/admin/" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i>ADMIN</a>
+    </div>
+  </div>
+</div>
+
+    <div class="container" id="employee-registration-form">
+        <h2>Employee Registration</h2>
+        <form action="" method="post">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" placeholder="First name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="country">Address</label>
+                <input type="text" class="form-control" placeholder="Address" name="address">
+            </div>
+            <div class="form-group">
+                <label for="number">Phone number</label>
+                <input type="text" class="form-control" placeholder="Phone number" name="number">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" placeholder="Email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="category">Department</label>
+                <input type="text" class="form-control" placeholder="Department" name="department">
+            </div>
+            <div class="form-group">
+                <label for="grade">Employee Grade</label>
+                <input type="text" class="form-control" placeholder="Grade" name="grade">
+            </div>
+            <div class="form-group">
+                <label for="salary">Base Salary</label>
+                <input type="text" class="form-control" placeholder="Salary" name="base_salary">
+            </div>
+            <div class="form-group">
+                <label for="Designation">Designation</label>
+                <input type="text" class="form-control" placeholder="Designation" name="designation">
+            </div>
+            <div class="form-group">
+                <label for="DA">DA</label>
+                <input type="text" class="form-control" placeholder="DA" name="DA">
+            </div>
+            <div class="form-group">
+                <label for="HRA">HRA</label>
+                <input type="text" class="form-control" placeholder="HRA" name="HRA">
+            </div>
+            <div class="form-group">
+                <label for="Tax">Tax</label>
+                <input type="text" class="form-control" placeholder="Tax" name="Tax">
+            </div>
+            <div class="form-group">
+                <label for="pf">Provident Fund</label>
+                <input type="text" class="form-control" placeholder="PF" name="PF">
+            </div>
+            <div class="form-group">
+                <label for="birth">Birth Date</label>
+                <input type="date" class="form-control" placeholder="Date" name="Birth">
+            </div>
+
+            <div class="form-group">
+                <label>Gender</label>
+                <div class="radio">
+                    <label class="radio-inline">
+                        <input type="radio" name="gender">Male</label>
+                    <label class="radio-inline">
+                        <input type="radio" name="gender">Female</label>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <input type="submit" name="submit" class="login loginmodal-submit" value="Register">
+        </form>
+    </div>
+    <br>
+    <br>
+</body>
+
+</html>

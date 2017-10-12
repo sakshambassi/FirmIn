@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Statistics</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/clientproject.css') }}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style type="text/css">
+        td, th{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+	 <div class="w3-top">
+        <div class="w3-bar" id="myNavbar">
+            <a href="http://127.0.0.1:5000/FirmIn/" class="w3-bar-item w3-button">FIRMIN</a>
+            <a href="http://127.0.0.1:5000/FirmIn/admin/" class="w3-bar-item w3-button">ADMIN</a>
+            <div class="navbartabs">
+                    <a href="" class="w3-bar-item w3-button w3-hide-small" style="float: right;"><i class="fa fa-user"></i>LOGOUT</a>
+             </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 80px">
+        <div class="col-md-10 col-sm-10 col-md-offset-1 col-xs-12 gutter">
+            <div class="sales">
+                <h2 style="text-align: center;">Status of employess currently working</h2>
+                <table>
+                <thead>
+                    <tr>
+                        <th>Employee Id</th>
+                        <th>Employee Name</th>
+                        <th>Progress</th>
+                        <th>Team ID</th>
+                        <th>Project</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for id,name,progress,team,project in statuslist: %}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{name}}</td>
+                        <td>{{progress}}</td>
+                        <td>{{team}}</td>
+                        <td>{{project}}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

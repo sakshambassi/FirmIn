@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Goals</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/clientproject.css')}}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="w3-top">
+    <div class="w3-bar" id="myNavbar">
+      <a href="http://127.0.0.1:5000/FirmIn" class="w3-bar-item w3-button">FIRMIN</a>
+      <a href="http://127.0.0.1:5000/FirmIn/admin" class="w3-bar-item w3-button">ADMIN</a>
+      <div class="navbartabs">
+        <a href="http://127.0.0.1:5000/FirmIn/login/" class="w3-bar-item w3-button w3-hide-small" style="float: right;"><i class="fa fa-user"></i>LOGOUT</a>
+     </div>
+    </div>
+  </div>
+	<div class="row" style="margin-top: 40px">
+	    <div class="col-md-10 col-sm-10 col-md-offset-1 col-xs-12 gutter">
+            <div class="sales">
+                <h2>Incomplete Goal and total profit</h2>
+                    <ul class="list-group">
+                        <form action="/FirmIn/admin/goal/" method="post">
+                            <select name="goal_id" style="max-width:50%">
+                            	{% for id, desc in goalzip: %}
+                              	<option value={{id}}>{{desc}}</option>
+                              {% endfor %}
+                            </select>
+                            <input type="text" name="profit" placeholder="Total Profit">
+                            <input type="submit" name="submit" value="Complete Goal">
+                        </form>
+                    </li>   
+                    </ul>
+            </div>
+        </div>
+  </div>
+  <div class="row" style="margin-top: 40px">
+      <div class="col-md-10 col-sm-10 col-md-offset-1 col-xs-12 gutter">
+            <div class="sales">
+                <h2>Funds Needed and Funds allocated</h2>
+                  <table>
+                  <thead>
+                      <tr>
+                          <th style="padding: 10px">Goal Description</th>
+                          <th style="padding: 10px">Funds Needed</th>
+                          <th style="padding: 10px">Funds Allocated</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                  {% for desc,need,alloc in fundszip: %}
+                      <tr>
+                          <td style="padding: 10px">{{desc}}</td>
+                          <td style="padding: 10px">{{need}}</td>
+                          <td style="padding: 10px">{{alloc}}</td>
+                      </tr>
+                  {% endfor %}
+                  </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/leader.css') }}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="http://127.0.0.1:5000/FirmIn/" class="w3-bar-item w3-button">FIRMIN</a>
+    <div class="navbartabs">
+    <a href="http://127.0.0.1:5000/FirmIn/what-we-do/" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i>WHAT WE DO</a>
+    <a href="http://127.0.0.1:5000/FirmIn/login" class="w3-bar-item w3-button w3-hide-small" style="float: right;"><i class="fa fa-user"></i>LOGOUT</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+    <div class="row profile">
+	<div><h3>Welcome Board</h3><hr></div>
+		<div class="col-md-3">
+			<div class="profile-sidebar">
+				<!-- SIDEBAR USERPIC -->
+				<div class="profile-userpic">
+					<img src="" class="img-responsive" alt="">
+				</div>
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						Employee ID: {{id}}
+					</div>
+          <div class="profile-usertitle-name">
+            <a href="http://127.0.0.1:5000/FirmIn/profile/{{id}}">{{emp_name}}</a>
+          </div>
+					<div class="profile-usertitle-job">
+						Team Member
+					</div>
+				</div>
+				
+				<div class="profile-usermenu">
+					<ul class="nav">
+						<li>
+							<a href="#" data-toggle="collapse" data-target="#toggleDemo" data-parent="#sidenav01" class="collapsed" style="color:black">
+          							Status<span class="caret pull-right"></span>
+         					</a>
+          					<div class="collapse" id="toggleDemo" style="height: 0px;">
+    						<ul class="nav nav-list">
+  							<div class="progress">
+									<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow={{progress}}  aria-valuemin="0" aria-valuemax="100" style="width:{{progress}}%">{{progress}}
+                  </div>
+								</div> 
+     						</ul>				
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-9">
+            <div class="profile-content">
+		 <div id="sortableKanbanBoards" class="row">
+
+           
+            <div class="panel panel-primary kanban-col">
+                <div class="panel-heading">
+                    To do			
+                </div>
+                <div class="panel-body">
+                    <div id="TODO" class="kanban-centered">
+                      {% for x in tasklist1 %}
+                        <article class="kanban-entry grab" id="item1">
+                            <div class="kanban-entry-inner">
+                                <div class="kanban-label">
+                                    <h2>{{ x }}</h2>
+                                    <a href="/FirmIn/login/{{id}}/{{x}}/"><button>START DOING</button></a>
+                                </div>
+                            </div>
+                        </article>
+                      {% endfor %}
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="panel panel-primary kanban-col">
+                <div class="panel-heading">
+                    Doing
+                </div>
+                <div class="panel-body">
+                    <div id="DOING" class="kanban-centered">
+
+                      {% for x in tasklist2 %}
+                        <article class="kanban-entry grab" id="item2">
+                            <div class="kanban-entry-inner">
+                                <div class="kanban-label">
+                                    <h2>{{ x }}</h2>
+                                    <a href="/FirmIn/login/{{id}}/{{x}}"><button>COMPLETED</button></a>
+                                </div>
+                            </div>
+                        </article>
+                      {% endfor %}
+                    </div>
+                </div>
+                
+            </div>
+           
+            <div class="panel panel-primary kanban-col">
+                <div class="panel-heading">
+                    Completed
+                </div>
+                <div class="panel-body">
+                    <div id="DOING" class="kanban-centered">
+
+                      {% for x in tasklist3 %}
+                        <article class="kanban-entry grab" id="item2">
+                            <div class="kanban-entry-inner">
+                                <div class="kanban-label">
+                                    <h2>{{ x }}</h2>
+                                </div>
+                            </div>
+                        </article>
+                      {% endfor %}
+                    </div>
+                </div> 
+            </div>
+        </div>
+		</div>
+	</div>
+</div>
+</body
+</html>

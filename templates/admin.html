@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin</title>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/admin.css') }}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body class="home">
+    <div class="w3-top">
+        <div class="w3-bar" id="myNavbar">
+            <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+                <i class="fa fa-bars"></i>
+            </a>
+            <a href="http://127.0.0.1:5000/FirmIn/" class="w3-bar-item w3-button">FIRMIN</a>
+                <div class="navbartabs">
+                   
+                    <a href="http://127.0.0.1:5000/FirmIn/login" class="w3-bar-item w3-button w3-hide-small" style="float: right;"><i class="fa fa-user"></i>LOGOUT</a>
+                 </div>
+        </div>
+    </div>
+    <div class="container-fluid display-table" style="margin-top: 60px;">
+        <div class="row display-table-row">
+            <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
+                
+                <div class="navi">
+                    <ul>
+                        <li><a href="/FirmIn/admin/goal/"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Goals</span></a></li>
+                        <li><a href="/FirmIn/admin/completed/"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Completed</span></a></li>
+                        <li><a href="/FirmIn/admin/empstatus/"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Statistics</span></a></li>
+                        <li><a href="/FirmIn/admin/employeereg/"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Employee Register</span></a></li>
+                        <li><a href="/FirmIn/admin/clientproject/"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">New Projects</span></a></li>
+                        <li><a href="/FirmIn/admin/clientregister/"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Client Register</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10 col-sm-11 display-table-cell v-align" style="background-color: white">
+                
+                <div class="user-dashboard">
+                    <h1>Hello, Admin</h1>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 gutter">
+                            <div class="sales">
+                                <h2>Graphs and Progress</h2>
+                                <br>
+                                <br>
+                                <img style="height:400px" src="data:image/png;base64, {{ plot_url }}">
+                                <br>
+                                <br>
+                                <h5 style="margin-left: 200px">Categories vs Cost</h5>
+                                <br>
+                                <img style="height:400px" src="data:image/png;base64, {{ plot_url2 }}">
+                                <br>
+                                <br>
+                                <h5 style="margin-left: 200px">Categories vs count</h5>
+                                <br>
+                                <img style="height:400px" src="data:image/png;base64, {{ plot_url3 }}">
+                                <br>
+                                <img style="height:400px" src="data:image/png;base64, {{ plot_url4 }}">
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+</body>
+</html>

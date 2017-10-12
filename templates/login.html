@@ -1,0 +1,21 @@
+<html>
+<title>
+	Login
+</title>
+<head>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/login.css') }}">
+</head>
+<body>
+<div class="modal-dialog">
+	<div class="loginmodal-container">
+		<h1>Login</h1><br>
+	  <form action="" method="post">
+			<input type="email" name="id" placeholder="Email ID" value="{{request.form.id}}">
+			<input type="password" name="pass" placeholder="Password" value="{{request.form.pass}}">
+			<input type="submit" name="submit" class="login loginmodal-submit" value="Login">
+	  </form>
+	</div>
+</div>
+		
+</body>
+</html>

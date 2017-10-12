@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Completed Projects</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+	<link rel="stylesheet" href="{{ url_for('static',filename='styles/clientproject.css') }}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style type="text/css">
+        td, th{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+	 <div class="w3-top">
+        <div class="w3-bar" id="myNavbar">
+            <a href="http://127.0.0.1:5000/FirmIn/" class="w3-bar-item w3-button">FIRMIN</a>
+            <a href="http://127.0.0.1:5000/FirmIn/admin/" class="w3-bar-item w3-button">ADMIN</a>
+            <div class="navbartabs">
+                    <a href="" class="w3-bar-item w3-button w3-hide-small" style="float: right;"><i class="fa fa-user"></i>LOGOUT</a>
+             </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 80px">
+        <div class="col-md-10 col-sm-10 col-md-offset-1 col-xs-12 gutter">
+            <div class="sales">
+                <h2 style="text-align: center;">Completed Projects</h2>
+                <table>
+                <thead>
+                    <tr>
+                        <th>Team Id</th>
+                        <th>Team Name</th>
+                        <th>Project Description</th>
+                        <th>Project Cost</th>
+                        <th>Completed on</th>
+                        <th>Delivered to Client</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for id,desc,cost,date,team,client in completedlist: %}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{team}}</td>
+                        <td>{{desc}}</td>
+                        <td>{{cost}}</td>
+                        <td>{{date}}</td>
+                        <td>{{client}}
+                    </tr>
+                {% endfor %}
+                </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

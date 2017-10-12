@@ -1,0 +1,62 @@
+body 
+{background: #EAEAEA;}
+.user-details 
+{position: relative; padding: 0;}
+.user-details .user-image 
+{position: relative;  z-index: 1; width: 100%; text-align: center;}
+ .user-image img 
+{ clear: both; margin: auto; position: relative;}
+
+.user-details .user-info-block 
+{width: 100%; position: absolute; top: 55px; background: rgb(255, 255, 255); z-index: 0; padding-top: 35px;}
+ .user-info-block .user-heading 
+{width: 100%; text-align: center; margin: 10px 0 0;}
+ .user-info-block .navigation
+ {float: left; width: 100%; margin: 0; padding: 0; list-style: none; border-bottom: 1px solid black; border-top: 1px solid black;}
+  .navigation li 
+{float: left; margin: 0; padding: 0;width:185px}
+   .navigation li a 
+{padding: 20px 30px; float: left;}
+   .navigation li.active a 
+{background: black; color: white}
+ .user-info-block .user-body
+ {float: left; padding: 5%; width: 90%;}
+  .user-body .tab-content > div 
+{float: left; width: 100%;}
+  .user-body .tab-content h4 
+{width: 100%; margin: 10px 0; color: #333;}
+img {
+    display: block;
+    margin: auto;
+    width: 40%;
+}
+hr {
+  border: 3px; 
+  height: 1px; 
+
+}
+h4{
+  text-align: center;
+}
+ul{
+  padding: :30px;
+}
+li{
+  color: black;
+}
+a:active{
+  color: white;
+}
+.w3-top{
+    background-color: black;
+}
+.w3-top a{
+     color: white;
+}
+.w3-red{
+    color: #FF0000;
+}
+.w3-wide {
+    letter-spacing: 10px;
+}
+

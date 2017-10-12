@@ -1,0 +1,79 @@
+html{
+	background-size: cover;
+    min-height: 50%;
+}
+
+body{
+    background:none;
+}
+.w3-top{
+    background-color: black;
+}
+.w3-top a{
+     color: white;
+}
+
+#client-registration-form{
+    background-color: #fff;
+    max-width: 800px;
+    margin: 160px auto 0;
+    padding: 40px;
+    color: #858b8e;
+    box-shadow: 6px 6px 6px rgba(0,0,0,0.2);
+}
+
+#client-registration-form h2{
+    padding-bottom: 20px;
+    margin: 10px 20px;
+    font-size: 24px;
+}
+
+#client-registration-form hr{
+    margin-top: 38px;
+    margin-bottom: 54px;
+    margin-left:3px;
+    border: 1px solid #cccccc;
+
+}
+
+#client-registration-form .form-group{
+	margin-bottom: 20px;
+    margin-left:20px;
+	width: 30%;
+    float:left;
+    text-align: left;
+}
+
+#client-registration-form .form-control{
+    padding: 12px 20px;
+    height: auto;
+    border-radius: 2px;
+}
+
+#client-registration-form .btn{
+    width: 46%;
+    margin: 20px auto 0;
+    display: block;
+    outline: none;
+}
+
+@media screen and (max-width: 800px){
+    #client-registration-form .form-group{
+        width: 45%;
+    }
+
+    #client-registration-form{
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 560px){
+    #client-registration-form .form-group{
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #client-registration-form h2{
+        text-align: center;
+    }
+}

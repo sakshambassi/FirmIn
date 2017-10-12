@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<title>FirmIn</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='styles/home.css') }}">
+<script type="text/javascript" src="{{ url_for('static',filename='home.js') }}"></script>
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="" class="w3-bar-item w3-button">FIRMIN</a>
+    <div class="navbartabs">
+    <a href="http://127.0.0.1:5000/FirmIn/what-we-do/" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i>WHAT WE DO</a>
+    <a href="http://127.0.0.1:5000/FirmIn/client/" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i>SERVICES</a>
+    <a href="http://127.0.0.1:5000/FirmIn/invest/" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i>INVESTORS</a>
+    <a href="http://127.0.0.1:5000/FirmIn/login/" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i>LOGIN</a>
+    </div>
+  </div>
+</div>
+
+<div class=".bgimg-1 w3-display-container w3-opacity-min" id="home" style="background-image: url('http://i56.tinypic.com/2cqh2ew.jpg')">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <center><span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">FIRMIN</span></center>
+    <hr>
+    <center><h2>The truth is, you need FirmIn.</h2></center>
+  </div>
+</div>
+
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">ABOUT ME</h3>
+  We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+    qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    
+</div>
+
+  <!-- Cards -->
+<div class="w3-row-padding w3-center w3-padding-64" id="cards">
+    <div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul">
+        <img src="http://www.acsghana.com/Content/Content%20-%20Copy/images1/software_development.jpg">
+        <li class="w3-theme-l5 w3-padding-24">
+          <a href="http://127.0.0.1:5000/FirmIn/client/"><button class="w3-button w3-red w3-padding-large">Product and Services</button>
+        </li>
+      </ul>
+    </div>  
+
+    <div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul">
+        <img src="http://img.cdn2.vietnamnet.vn/Images/english/2016/12/27/13/20161227130007-stock24.jpg">
+        <li class="w3-theme-l5 w3-padding-24">
+          <a href="http://127.0.0.1:5000/FirmIn/invest/"><button class="w3-button w3-red w3-padding-large">Know our Investors</button>
+        </li>
+      </ul>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul">
+        <img src="https://blogmedia.evbstatic.com/wp-content/uploads/bloguk/shutterstock_245657518-730x510.jpg">
+        <li class="w3-theme-l5 w3-padding-24">
+          <a href="http://127.0.0.1:5000/FirmIn/login/"><button class="w3-button w3-red w3-padding-large">Employee Tracking</button>
+        </li>
+      </ul>
+    </div>
+</div>
+
+  <center><iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.576189725422!2d73.84864491489188!3d18.457542087445685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2eac85230ba47%3A0x871eddd0a8a0a108!2sPune+Institute+of+Computer+Technology!5e0!3m2!1sen!2sin!4v1506018030759" width="400" height="250" width="750" frameborder="0" style="border:0" allowfullscreen></iframe></center>
+
+<!-- Footer -->
+<footer class="w3-center w3-padding-64" id="footer">
+
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+</footer>
+ 
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+
+
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+</body>
+</html>

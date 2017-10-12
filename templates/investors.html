@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<title>Investors</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="{{ url_for('static',filename='styles/investors1.css') }}">
+<body>
+<!-- Navbar-->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="http://www.google.com/url?q=http%3A%2F%2F127.0.0.1%3A5000%2FFirmIn%2F&sa=D&sntz=1&usg=AFQjCNGelHnCXnzfZ9Vlo2r8sE6d_kAscg" class="w3-bar-item w3-button">FIRMIN</a>
+    <div class="navbartabs">
+    <a href="http://127.0.0.1:5000/FirmIn/client/" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i>SERVICES</a>
+    <a href="http://127.0.0.1:5000/FirmIn/what-we-do/" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i>WHAT WE DO</a>
+      <a href="http://127.0.0.1:5000/FirmIn/login/" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i>LOGIN</a>
+    </div>
+  </div>
+</div>
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <center><span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">INVESTORS</span></center>
+    <hr>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6" id="clientgraph">
+      <img style="height:400px" src="data:image/png;base64, {{ plot_url }}">
+    </div>
+    <div class="col-md-6"><br><br><br><h3><center>Investors</center></h3>
+      <p> FirmIn seeks to continuously produce and identify high-quality data sthrough our proprietary research platform. We develop and deploy systematic investment strategies focused on market inefficiencies across a variety of asset classes and global markets.
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6"><br><br><br><h3><center>More On Investment</center></h3>
+      <p> At FirmIn, researchers, portfolio managers and technologists work to rigorously identify sources of Data.
+          Researchers employ tested processes to identify high-quality data that we believe is undiscovered by the wider market. Our portfolio managers obtain the ideas through our proprietary database with the goal of transforming them into trading strategies. Our technologists automate trading by integrating these strategies into a highly efficient and effective data managing platform.
+      </p>
+    </div>
+    <div class="col-md-6">
+      <img style="height:400px" src="data:image/png;base64, {{ plot_url2 }}">
+    </div>
+  </div>
+</div>
+<br>
+<center>
+<fieldset>
+  <form action="" method="post">
+    <b>Name:</b>
+    <br>
+    <input type="text" name="name" placeholder="Name"><br>
+    <br>
+    <b>Goal:</b>
+    <br>
+    <select name="goal" style="max-width:97%">
+    {% for id,desc in goalzip: %}
+        <option value={{id}}>{{desc}}</option>
+    {% endfor %}
+    </select>
+    <br>
+    <br>
+    <b>Funds you would like to invest:</b>
+    <br>
+    <input type="name" name="fund" placeholder="Funds"><br>
+    <br>
+    <input type="submit" name="submit" class="submit" value="Submit">
+  </form>
+</fieldset>
+</center>
+<footer class="w3-center w3-padding-64" id="footer">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+</footer>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+
+</body>
+</html>
