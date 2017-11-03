@@ -25,8 +25,8 @@
                 	<div class="list">
                 		<h5>Project Description : {{desc}}</h5>
                         <h5>Client Name : {{name}}</h5>
-                		<a href="/FirmIn/admin/clientproject/disapprove/{{key}}/"><button>Disapprove</button></a>
-                		<a href="/FirmIn/admin/clientproject/approve/{{key}}/"><button>Approve</button></a>
+                		<a href="/FirmIn/admin/clientproject/disapprove/{{id}}/"><button>Disapprove</button></a>
+                		<a href="/FirmIn/admin/clientproject/approve/{{id}}/"><button>Approve</button></a>
                 	</div>
                 </div>
                 {% endfor %}
@@ -39,16 +39,20 @@
                 <table>
                 <thead>
                     <tr>
-                        <th style="padding: 10px">Teamleader</th>
+                        <th style="padding: 10px">Team ID</th>
                         <th style="padding: 10px">Team</th>
+                        <th style="padding: 10px">Teamleader ID</th>
+                        <th style="padding: 10px">Teamleader</th>
                     </tr>
                 </thead>
                 <tbody>
-                {% for key, value in freedict.iteritems(): %}
+                {% for lid,tname,tid,tlname in freezip: %}
                 <tr>
-                    <td style="padding: 10px">{{key}}</td>
-                    <td style="padding: 10px">{{value}}</td>
-                    <td style="padding: 10px"><form action="/FirmIn/admin/newteamlead/{{key}}/" method="post">
+                    <td style="padding: 10px">{{tid}}</td>
+                    <td style="padding: 10px">{{tname}}</td>
+                    <td style="padding: 10px">{{lid}}</td>
+                    <td style="padding: 10px">{{tlname}}</td>
+                    <td style="padding: 10px"><form action="/FirmIn/admin/newteamlead/{{lid}}/" method="post">
                         <select name="project_id" style="max-width:50%">
                             {% for key,value in approveddict.iteritems(): %}
                                 <option value={{key}}>{{value}}</option>

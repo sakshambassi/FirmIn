@@ -38,7 +38,7 @@
   <div class="row" style="margin-top: 40px">
       <div class="col-md-10 col-sm-10 col-md-offset-1 col-xs-12 gutter">
             <div class="sales">
-                <h2>Funds Needed and Funds allocated</h2>
+                <h2>Incomplete Goals</h2>
                   <table>
                   <thead>
                       <tr>
@@ -53,6 +53,31 @@
                           <td style="padding: 10px">{{desc}}</td>
                           <td style="padding: 10px">{{need}}</td>
                           <td style="padding: 10px">{{alloc}}</td>
+                      </tr>
+                  {% endfor %}
+                  </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+  <div class="row" style="margin-top: 40px">
+      <div class="col-md-10 col-sm-10 col-md-offset-1 col-xs-12 gutter">
+            <div class="sales">
+                <h2>Completed Goals</h2>
+                  <table>
+                  <thead>
+                      <tr>
+                          <th style="padding: 10px">Goal Description</th>
+                          <th style="padding: 10px">Goal Profits</th>
+                          <th style="padding: 10px">Team Responsible</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                  {% for desc,prof,team in completedgoals: %}
+                      <tr>
+                          <td style="padding: 10px">{{desc}}</td>
+                          <td style="padding: 10px">{{prof}}</td>
+                          <td style="padding: 10px">{{team}}</td>
                       </tr>
                   {% endfor %}
                   </tbody>
