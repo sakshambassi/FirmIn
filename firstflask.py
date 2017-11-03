@@ -42,7 +42,7 @@ def client():
 		service_desc = request.form['service']
 		cost = request.form['cost']
 		deadline = request.form['deadline']
-		cursor.execute("INSERT INTO project_info VALUES(%s,NULL,%s,%s,%s,'waiting for approval',%s,%s)",(project_id,service_category,service_desc,deadline,client_id,cost))
+		cursor.execute("INSERT INTO project_info VALUES(%s,NULL,%s,%s,%s,'waiting for approval',%s,%s)",(project_id,service_category,service_desc,deadline,cost,client_id))
 		conn.commit()
 	cursor.execute("SELECT DISTINCT category FROM project_info")
 	categories = cursor.fetchall()
@@ -330,13 +330,14 @@ def clientproject():
 		projectids.append(data[0])
 		projectdescs.append(data[1])
 		clientnames.append(data[2])
-	cursor.execute("SELECT teamleader_id,team_name FROM team_info WHERE team_id not in ( SELECT team_id from project_info where status = 'In progress') or team_id not in (SELECT team_id FROM project_info)")
-	freeid, freename = [],[]
+	cursor.execute("SELECT t.teamleader_id,t.team_name,t.team_id,e.emp_name FROM team_info as t,employee_info as e WHERE t.team_id not in ( SELECT team_id from project_info where status = 'In progress') AND e.emp_id=t.teamleader_id")
+	freeid, freename, freeteam, freeteamleader = [],[],[],[]
 	freeall = cursor.fetchall()
 	for free in freeall:
 		freeid.append(free[0])
 		freename.append(free[1])
-	freedict = dict(zip(freeid, freename))
+		freeteam.append(free[2])
+		freeteamleader.append(free[3])
 
 	cursor.execute("SELECT project_id, project_description FROM project_info WHERE status = 'approved'")
 	dataall = cursor.fetchall()
@@ -345,7 +346,7 @@ def clientproject():
 		approvedid.append(data[0])
 		approveddesc.append(data[1])
 	approveddict = dict(zip(approvedid,approveddesc))
-	return render_template('clientproject.html', projectzip = zip(projectids, projectdescs,clientnames), freedict = freedict, approveddict = approveddict)
+	return render_template('clientproject.html', projectzip = zip(projectids, projectdescs,clientnames), freezip = zip(freeid,freename,freeteam,freeteamleader), approveddict = approveddict)
 
 ###################################################
 
@@ -421,14 +422,21 @@ def admingoal():
 		cursor.execute("UPDATE company_goal SET goal_status = 'completed', goal_profits= %s WHERE goal_id = %s",(profit,goal_id))
 		conn.commit()
 		return admin()
-	cursor.execute("SELECT c.goal_description,funds_needed,sum(funds_allocated) FROM company_goal as c, investors as i WHERE c.goal_id=i.goal_id GROUP BY i.goal_id")
+	cursor.execute("SELECT c.goal_description,funds_needed,sum(funds_allocated) FROM company_goal as c, investors as i WHERE c.goal_id=i.goal_id and c.goal_status='incomplete' GROUP BY i.goal_id")
 	dataall=cursor.fetchall()
 	desc,needed,allocated=[],[],[]
 	for data in dataall:
 		desc.append(data[0])
 		needed.append(data[1])
 		allocated.append(data[2])
-	return render_template('goal.html', goalzip = zip(goalid,goaldesc), fundszip = zip(desc,needed,allocated))
+	cursor.execute("SELECT goal_description,goal_profits,team_id FROM company_goal WHERE goal_status='completed'")
+	dataall=cursor.fetchall()
+	cgoald,cgoalp,cteamid = [],[],[]
+	for data in dataall:
+		cgoald.append(data[0])
+		cgoalp.append(data[1])
+		cteamid.append(data[2])
+	return render_template('goal.html', goalzip = zip(goalid,goaldesc), fundszip = zip(desc,needed,allocated),completedgoals = zip(cgoald,cgoalp,cteamid))
 
 def categorycountplot():
 	cursor.execute("SELECT category,count(*) from project_info group by category")
